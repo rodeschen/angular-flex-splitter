@@ -1,0 +1,58 @@
+ @import 'flexbox';
+ @import 'compass/css3/user-interface';
+$splitter-border-size : 5px !default;
+$splitter-color : #EFEFEF !default;
+
+
+.flexbox-content{
+  width:100%;
+  height:100%;
+  position:absolute;
+  &.active{
+    @include user-select(none);
+  }
+
+  > div{
+    overflow: auto;
+  }
+
+}
+
+.flexbox{
+  
+  background: #EEE;
+  @include display-flex();
+  
+  &.column{
+    @include box-orient(vertica);
+    @include flex-direction(column);
+  }
+
+  [splitter]{
+    box-shadow: ($splitter-color - #333333) 0px 0px 2px 1px inset;
+    
+  }
+
+  [splitter=left],[splitter=right]{
+    width:$splitter-border-size;
+    height: auto;
+    background: $splitter-color;
+    cursor: col-resize;
+  }
+
+  [splitter=up],[splitter=down]{
+    width: auto;
+    height:$splitter-border-size;
+    background: $splitter-color;
+    cursor: row-resize;
+  }
+
+  [splitter][fixed=fixed]{
+    cursor: default;
+  }
+
+  .flex{
+    @include box-flex(1);
+    flex: 1;
+  }
+}

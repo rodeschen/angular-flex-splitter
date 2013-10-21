@@ -1,0 +1,61 @@
+.flexbox-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.flexbox > div{
+  overflow: auto;
+}
+
+.flexbox-content.active {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flexbox {
+  background: #EEE;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flexbox.column {
+  -webkit-box-orient: vertica;
+  -moz-box-orient: vertica;
+  -ms-box-orient: vertica;
+  box-orient: vertica;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.flexbox [splitter] {
+  box-shadow: #bcbcbc 0px 0px 2px 1px inset;
+}
+.flexbox [splitter=left], .flexbox [splitter=right] {
+  width: 5px;
+  height: auto;
+  background: #efefef;
+  cursor: col-resize;
+}
+.flexbox [splitter=up], .flexbox [splitter=down] {
+  width: auto;
+  height: 5px;
+  background: #efefef;
+  cursor: row-resize;
+}
+.flexbox [splitter][fixed=fixed] {
+  cursor: default;
+}
+.flexbox .flex {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  flex: 1;
+}

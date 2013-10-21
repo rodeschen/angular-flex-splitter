@@ -1,0 +1,63 @@
+<!--[if IE 7 ]>      
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="no-js ie ie7 lte7 lte8 lte9" lang="zh-tw"> <![endif]-->
+<!--[if IE 8 ]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="no-js ie ie8 lte8 lte9" lang="zh-tw"> <![endif]-->
+<!--[if IE 9 ]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="no-js ie ie9 lte9>" lang="zh-tw"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<!doctype html>
+<html class="no-js" lang="zh-tw" ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="jquery.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-flex-splitter.js"></script>
+    <link rel="stylesheet"  href="angular-flex-splitter.css" />
+    <title>angular-flex-splitter</title>
+    <style>
+    html {
+        height: 100%;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    body .main-body {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        min-height: 100%;
+    }
+    </style>
+    <script>
+    angular.module("app", ['splitter']);
+    </script>
+</head>
+
+<body>
+    <div class="flexbox-content flexbox flex column" style="border:1px #AAA solid;">
+        <div class="flexbox flex">
+            <div style="width:200px">left</div>
+            <div splitter="left"></div>
+            <div class="flexbox column flex">
+                <div class="flex">top</div>
+                <div splitter="down"></div>
+                <div style="height:100px">down</div>
+            </div>
+            <div splitter="right"></div>
+            <div class="flexbox column" style="width:300px">
+                <div class="flex">top</div>
+                <div splitter="down"></div>
+                <div style="height:100px">down</div>
+            </div>
+        </div>
+        <div splitter="down" fixed="fixed"></div>
+        <div style="height:100px">footer fixed</div>
+    </div>
+</body>
