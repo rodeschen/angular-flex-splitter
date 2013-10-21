@@ -20,7 +20,6 @@ $splitter-color : #EFEFEF !default;
 
 .flexbox{
   
-  background: #EEE;
   @include display-flex();
   
   &.column{
