@@ -5,7 +5,8 @@ angular-flex-splitter
 
 其中還是使用到了 jQuery 主要是需要利用 prov 及 parents method
 
-** 載入方式 **
+載入
+================
 
     <script src="jquery.js"></script>
     <script src="angular.min.js"></script>
@@ -14,7 +15,22 @@ angular-flex-splitter
 	    angular.module("app", ['splitter']);
     </script>    
 
-** 使用方式 **
+使用說明
+===============
+** 參數說明 **
+
+1. CSS class
+    1. flexbox-content - full parent content
+    2. flexbox - content(default horizontal mode)
+    3. column - vertica mode
+    4. flex - main block
+2. splitter 
+    1. vertica mode -  up | down
+    2. horizontal mode - left | right
+3. fixed - fixed mode(value fixed)
+
+
+==============
 	
 	<!-- class flexbox-content : fully parent -->
 	<!-- class flexbox : flex mode -->
@@ -46,6 +62,7 @@ angular-flex-splitter
             </div>
         </div>
         <!-- vertica mode : splitter = down | up -->
+        <!-- fixed mode : fixed = fixed -->
         <div splitter="down" fixed="fixed"></div>
         <!-- set default height -->
         <div style="height:100px">footer fixed</div>
