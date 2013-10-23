@@ -56,5 +56,9 @@
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
+  -webkit-flex : 1;
+  -ms-flex : 1;
+  -moz-flex : 1;
   flex: 1;
+
 }
