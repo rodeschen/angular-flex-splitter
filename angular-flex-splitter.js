@@ -2,17 +2,17 @@
 angular.module("splitter", []).directive("splitter", function() {
     return {
         restrict: 'AC',
-        scope: {
-            'splitter': '@',
-            'fixed': '@'
-        },
-        link: function(scope, iElement) {
-            if (scope.fixed === 'fixed') return;
+        // scope: {
+        //     'splitter': '@',
+        //     'fixed': '@'
+        // },
+        link: function(scope, iElement, iAttr) {
+            if (iAttr.fixed === 'fixed') return;
             var isActive = false;
-            var isPerv = /^(up|left)$/.test(scope.splitter);
+            var isPerv = /^(up|left)$/.test(iAttr.splitter);
             var target = isPerv ? iElement.prev() : iElement.next();
-            var style = /^(up|down)$/.test(scope.splitter) ? 'height' : 'width';
-            var eventType = /^(up|down)$/.test(scope.splitter) ? 'clientY' : 'clientX';
+            var style = /^(up|down)$/.test(iAttr.splitter) ? 'height' : 'width';
+            var eventType = /^(up|down)$/.test(iAttr.splitter) ? 'clientY' : 'clientX';
             var sourceSize, targetSize;
             iElement.on('mousedown', function(ev) {
                 isActive = true;
