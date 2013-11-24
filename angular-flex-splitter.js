@@ -2,10 +2,6 @@
 angular.module("splitter", []).directive("splitter", function() {
     return {
         restrict: 'AC',
-        // scope: {
-        //     'splitter': '@',
-        //     'fixed': '@'
-        // },
         link: function(scope, iElement, iAttr) {
             if (iAttr.fixed === 'fixed') return;
             var isActive = false;
@@ -14,10 +10,11 @@ angular.module("splitter", []).directive("splitter", function() {
             var style = /^(up|down)$/.test(iAttr.splitter) ? 'height' : 'width';
             var eventType = /^(up|down)$/.test(iAttr.splitter) ? 'clientY' : 'clientX';
             var sourceSize, targetSize;
+            var content = iElement.parents(".flexbox-content");
             iElement.on('mousedown', function(ev) {
                 isActive = true;
                 targetSize = parseInt(target.css(style));
-                iElement.parents(".flexbox-content").addClass("active");
+                content.addClass("active");
             }).parent().on('mousemove', function(ev) {
                 if (!isActive) return;
                 if (isPerv) {
@@ -29,8 +26,12 @@ angular.module("splitter", []).directive("splitter", function() {
                 sourceSize = ev[eventType];
             }).on('mouseup', function(ev) {
                 isActive = false;
-                iElement.parents(".flexbox-content").removeClass("active");
+                content.removeClass("active");
             });
+
+            //fix parent full width issue
+            content.width(content.parent().width());
+
         }
     };
 });
