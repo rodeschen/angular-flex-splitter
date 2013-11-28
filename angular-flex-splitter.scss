@@ -55,6 +55,6 @@ $splitter-color : #EFEFEF !default;
     @include box-flex(1);
     -webkit-flex : 1;
     flex: 1;
-    position: absolute;
+    position: relative;
   }
 }
