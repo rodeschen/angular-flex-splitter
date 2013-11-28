@@ -20,9 +20,9 @@ $splitter-color : #EFEFEF !default;
 }
 
 .flexbox{
-  
+
   @include display-flex();
-  
+
   &.column{
     @include box-orient(vertica);
     @include flex-direction(column);
@@ -30,7 +30,7 @@ $splitter-color : #EFEFEF !default;
 
   [splitter]{
     box-shadow: ($splitter-color - #333333) 0px 0px 2px 1px inset;
-    
+
   }
 
   [splitter=left],[splitter=right]{
@@ -55,5 +55,6 @@ $splitter-color : #EFEFEF !default;
     @include box-flex(1);
     -webkit-flex : 1;
     flex: 1;
+    position: absolute;
   }
 }
