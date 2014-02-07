@@ -1,20 +1,23 @@
-.flexbox-content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.flexbox > div{
-  overflow: auto;
-}
-
-.flexbox-content.active {
+/* line 9, angular-flex-splitter.scss */
+.flexbox-active {
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
+/* line 13, angular-flex-splitter.scss */
+.flexbox-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* line 21, angular-flex-splitter.scss */
+.flexbox-content > div {
+  overflow: auto;
+}
+
+/* line 27, angular-flex-splitter.scss */
 .flexbox {
   display: -webkit-box;
   display: -moz-box;
@@ -22,6 +25,14 @@
   display: -webkit-flex;
   display: flex;
 }
+/* line 28, angular-flex-splitter.scss */
+.flexbox > * {
+  -webkit-transition: width 0.5s, height 0.5s;
+  -moz-transition: width 0.5s, height 0.5s;
+  -o-transition: width 0.5s, height 0.5s;
+  transition: width 0.5s, height 0.5s;
+}
+/* line 33, angular-flex-splitter.scss */
 .flexbox.column {
   -webkit-box-orient: vertica;
   -moz-box-orient: vertica;
@@ -33,32 +44,50 @@
   -webkit-flex-direction: column;
   flex-direction: column;
 }
+/* line 37, angular-flex-splitter.scss */
+.flexbox .ghost {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+}
+/* line 42, angular-flex-splitter.scss */
+.flexbox .ghost.active {
+  background-color: #efefef;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
+  opacity: 50;
+}
+/* line 48, angular-flex-splitter.scss */
 .flexbox [splitter] {
   box-shadow: #bcbcbc 0px 0px 2px 1px inset;
+  position: relative;
+  overflow: initial;
 }
+/* line 55, angular-flex-splitter.scss */
 .flexbox [splitter=left], .flexbox [splitter=right] {
   width: 5px;
   height: auto;
   background: #efefef;
   cursor: col-resize;
 }
+/* line 62, angular-flex-splitter.scss */
 .flexbox [splitter=up], .flexbox [splitter=down] {
   width: auto;
   height: 5px;
   background: #efefef;
   cursor: row-resize;
 }
+/* line 69, angular-flex-splitter.scss */
 .flexbox [splitter][fixed=fixed] {
   cursor: default;
 }
+/* line 73, angular-flex-splitter.scss */
 .flexbox .flex {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
-  -webkit-flex : 1;
-  -ms-flex : 1;
-  -moz-flex : 1;
+  -webkit-flex: 1;
   flex: 1;
   position: relative;
 }
