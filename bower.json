@@ -1,0 +1,14 @@
+{
+  "name": "angular-flex-splitter",
+  "main": "angular-flex-splitter.js",
+  "version": "0.1.1",
+  "homepage": "https://github.com/rodeschen/angular-flex-splitter",
+  "authors": [
+    "Rodes <rodes.chen@gmail.com>"
+  ],
+  "description": "angular directive for css-flex-layout",
+  "dependencies": {
+        "angular": "~1.2.0-rc.3",
+        "jquery" :"~1.10.2"
+  }
+}
