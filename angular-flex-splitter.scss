@@ -2,9 +2,9 @@
  @import 'compass/css3/user-interface';
  @import 'compass/css3/box';
  @import 'compass/css3/transition';
- @import 'compass/css3/opacity';
 $splitter-border-size : 5px !default;
 $splitter-color : #EFEFEF !default;
+$splitter-ghost-color : $splitter-color - #010;
 
 .flexbox-active {
   @include user-select(none);
@@ -40,9 +40,7 @@ $splitter-color : #EFEFEF !default;
     position: absolute;
     z-index: 99;
     &.active {
-      background-color: $splitter-color;
-      @include opacity(50);
-
+      background-color: $splitter-ghost-color;
     }
   }
   [splitter]{

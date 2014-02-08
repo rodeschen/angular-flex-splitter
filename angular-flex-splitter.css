@@ -53,35 +53,33 @@
 }
 /* line 42, angular-flex-splitter.scss */
 .flexbox .ghost.active {
-  background-color: #efefef;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5000);
-  opacity: 50;
+  background-color: #efdeef;
 }
-/* line 48, angular-flex-splitter.scss */
+/* line 46, angular-flex-splitter.scss */
 .flexbox [splitter] {
   box-shadow: #bcbcbc 0px 0px 2px 1px inset;
   position: relative;
   overflow: initial;
 }
-/* line 55, angular-flex-splitter.scss */
+/* line 53, angular-flex-splitter.scss */
 .flexbox [splitter=left], .flexbox [splitter=right] {
   width: 5px;
   height: auto;
   background: #efefef;
   cursor: col-resize;
 }
-/* line 62, angular-flex-splitter.scss */
+/* line 60, angular-flex-splitter.scss */
 .flexbox [splitter=up], .flexbox [splitter=down] {
   width: auto;
   height: 5px;
   background: #efefef;
   cursor: row-resize;
 }
-/* line 69, angular-flex-splitter.scss */
+/* line 67, angular-flex-splitter.scss */
 .flexbox [splitter][fixed=fixed] {
   cursor: default;
 }
-/* line 73, angular-flex-splitter.scss */
+/* line 71, angular-flex-splitter.scss */
 .flexbox .flex {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
