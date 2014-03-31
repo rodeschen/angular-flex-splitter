@@ -1,11 +1,11 @@
 angular-flex-splitter
 =====================
 
-參考 [polymer-ui-splitter](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-splitter/index.html) 改寫為 angular 方式撰寫
+In reference to [polymer-ui-splitter](http://www.polymer-project.org/polymer-all/polymer-ui-elements/polymer-ui-splitter/index.html) ,rewrite to angular.
 
-其中還是使用到了 jQuery 主要是需要利用 prov 及 parents method
+It’s still  using the jQuery,and mainly use prov and parents method.
 
-載入
+Installation
 ================
 
     <script src="jquery.js"></script>
@@ -15,9 +15,9 @@ angular-flex-splitter
 	    angular.module("app", ['splitter']);
     </script>    
 
-使用說明
+Usage
 ===============
-** 參數說明 **
+** parameter Usage **
 
 1. CSS class
     1. flexbox-content - full parent content
