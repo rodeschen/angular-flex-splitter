@@ -15,23 +15,7 @@ angular.module("splitter", []).directive("splitter", ['$window', '$timeout',
         var sourceSize, targetSize;
         var body = angular.element('body');
         var content = iElement.parents(".flexbox-content");
-        // iElement.on('mousedown', function(ev) {
-        //   isActive = true;
-        //   targetSize = parseInt(target.css(style));
-        //   content.addClass("active");
-        // }).parent().on('mousemove', function(ev) {
-        //   if (!isActive) return;
-        //   if (isPerv) {
-        //     target.css(style, targetSize + (ev[eventType] - sourceSize));
-        //   } else {
-        //     target.css(style, targetSize - (ev[eventType] - sourceSize));
-        //   }
-        // }).on('mousedown', function(ev) {
-        //   sourceSize = ev[eventType];
-        // }).on('mouseup', function(ev) {
-        //   isActive = false;
-        //   content.removeClass("active");
-        // });
+
         var ghost = iElement.children(".ghost");
         var lastSize = 0;
         ghost.on('mousedown', function(ev) {
@@ -41,14 +25,8 @@ angular.module("splitter", []).directive("splitter", ['$window', '$timeout',
           ghost.addClass("active");
         }).parent().parent().on('mousemove', function(ev) {
           if (!isActive) return;
-          //if (isPerv) {
           lastSize = (ev[eventType] - sourceSize);
           ghost.css(ghostStyle, (ev[eventType] - sourceSize));
-          //target.css(style, targetSize + (ev[eventType] - sourceSize));
-          //} else {
-          //  ghost.css("left", (ev[eventType] - sourceSize));
-          // target.css(style, targetSize - (ev[eventType] - sourceSize));
-          //}
         }).on('mousedown', function(ev) {
           sourceSize = ev[eventType];
         }).on('mouseup', function(ev) {
@@ -66,12 +44,13 @@ angular.module("splitter", []).directive("splitter", ['$window', '$timeout',
         var wEl = angular.element($window);
         var pWidth = 0;
 
+
+
         function resize() {
           if (pWidth != content.parent().width()) {
             pWidth = content.parent().width();
             content.width(pWidth);
-            //content.height(wEl.height() - content.position().top);
-            //content.height(content.parent().height());
+            //fix animation delay
             $timeout(resize, 50);
           }
         }
